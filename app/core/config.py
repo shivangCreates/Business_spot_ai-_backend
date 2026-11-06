@@ -4,7 +4,12 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     database_url: str
-    frontend_origins: str = "http://localhost:4200"
+
+    frontend_origins: str = (
+        "http://localhost:4200,"
+        "https://businessspotai.com,"
+        "https://www.businessspotai.com"
+    )
 
     model_config = SettingsConfigDict(
         env_file=".env",
